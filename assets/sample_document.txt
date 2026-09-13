@@ -1,0 +1,37 @@
+Company Handbook: Project Nimbus
+
+Project Nimbus is an internal cloud migration initiative started by the Platform
+Engineering team in January 2025. The goal of the project is to move all
+on-premises data warehouses to a managed cloud data platform by the end of the
+fiscal year.
+
+Team Structure
+The project is led by the Director of Platform Engineering, Priya Nair. The
+core team consists of six engineers split into two squads: the Migration
+Squad, responsible for moving data pipelines, and the Reliability Squad,
+responsible for monitoring, alerting, and rollback procedures.
+
+Timeline
+Phase 1 (January - March 2025): Inventory all existing data sources and
+classify them by sensitivity and size.
+Phase 2 (April - August 2025): Migrate non-critical workloads first, starting
+with internal analytics dashboards.
+Phase 3 (September - December 2025): Migrate critical financial and customer
+data warehouses, with a full rollback plan in place for each migration.
+
+Budget
+The approved budget for Project Nimbus is 2.4 million dollars, covering cloud
+infrastructure costs, third-party migration tooling licenses, and contractor
+support for the Reliability Squad.
+
+Risks
+The main risks identified are: downtime during cutover windows, data
+consistency issues between old and new systems, and potential cost overruns
+if migrated workloads are not right-sized for the new cloud environment.
+Weekly risk review meetings are held every Thursday at 10 AM.
+
+Success Criteria
+The project will be considered successful if all data warehouses are migrated
+with less than four hours of cumulative downtime, no data loss incidents, and
+a net reduction in infrastructure costs of at least 15 percent within six
+months of completion.
