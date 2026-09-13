@@ -1,4 +1,6 @@
-venv/
-__pycache__/
-*.pyc
 .env
+.claude/
+Module1_Demos_v1.0/
+Module2_Demo_v1.0/
+GenAI-LLM-Concepts-Additional-Slides.pptx
+README.md

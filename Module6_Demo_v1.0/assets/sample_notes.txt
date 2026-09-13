@@ -1,0 +1,14 @@
+Product Onboarding Notes
+
+New users are guided through a 3-step setup wizard: connect a data source,
+choose a workspace template, and invite at least one teammate. Users who
+complete all 3 steps in their first session are roughly twice as likely to
+still be active after 30 days.
+
+The most common drop-off point is the data source connection step, largely
+because users are asked to grant broad permissions before understanding why
+they're needed. Adding a short explainer before the permissions prompt is
+planned for the next release.
+
+Support tickets tagged "onboarding" made up 18% of all tickets last quarter,
+down from 27% the quarter before, after the setup wizard redesign shipped.
