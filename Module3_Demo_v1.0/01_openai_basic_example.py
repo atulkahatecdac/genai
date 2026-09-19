@@ -27,7 +27,7 @@ def main():
             {"role": "user", "content": "In two sentences, explain what a large language model is."},
         ],
         temperature=0.7,
-        max_tokens=200,
+        max_tokens=20,
     )
 
     print(f"Model: {MODEL}")
