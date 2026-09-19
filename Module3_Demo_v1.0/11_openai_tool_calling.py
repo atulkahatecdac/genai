@@ -1,24 +1,18 @@
 """
 Demo 11: Tool calling (function calling) example using OpenAI.
 
-Defines a local `get_stock_price` function that fetches a real, live stock
-price from Yahoo Finance's public chart endpoint, lets the model decide when
+Defines a local `get_current_weather` function, lets the model decide when
 to call it, executes it locally, and feeds the result back so the model can
 produce a final natural-language answer.
 
 Setup:
-    pip install openai requests python-dotenv
+    pip install openai python-dotenv
     Set OPENAI_API_KEY in a .env file (see .env.example).
-
-Note: this uses Yahoo Finance's unofficial, undocumented chart API (no API
-key required), so it may break or rate-limit without notice - it's meant to
-show a real network call, not to be relied on for production trading.
 """
 
 import json
 import os
 
-import requests
 from dotenv import load_dotenv
 from openai import OpenAI
 
@@ -30,53 +24,31 @@ TOOLS = [
     {
         "type": "function",
         "function": {
-            "name": "get_stock_price",
-            "description": "Get the current stock price for a given ticker symbol.",
+            "name": "get_current_weather",
+            "description": "Get the current weather for a given city.",
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "ticker": {
-                        "type": "string",
-                        "description": "Stock ticker symbol, e.g. 'AAPL' for Apple, 'MSFT' for Microsoft",
-                    },
+                    "city": {"type": "string", "description": "City name, e.g. 'Bengaluru'"},
+                    "unit": {"type": "string", "enum": ["celsius", "fahrenheit"]},
                 },
-                "required": ["ticker"],
+                "required": ["city"],
             },
         },
     }
 ]
 
 
-def get_stock_price(ticker: str) -> str:
-    """Look up the latest price for a ticker symbol from Yahoo Finance."""
-    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}"
-    headers = {"User-Agent": "Mozilla/5.0"}
-
-    try:
-        response = requests.get(url, headers=headers, timeout=10)
-        response.raise_for_status()
-        meta = response.json()["chart"]["result"][0]["meta"]
-        data = {
-            "ticker": meta["symbol"],
-            "price": meta["regularMarketPrice"],
-            "currency": meta["currency"],
-            "previous_close": meta.get("chartPreviousClose"),
-        }
-    except (requests.RequestException, KeyError, IndexError, TypeError) as exc:
-        data = {"ticker": ticker, "error": f"Could not fetch price ({exc})"}
-
-    return json.dumps(data)
+def get_current_weather(city: str, unit: str = "celsius") -> str:
+    """Fake weather lookup - stands in for a real weather API call."""
+    fake_data = {"city": city, "temperature": 27, "unit": unit, "condition": "Partly cloudy"}
+    return json.dumps(fake_data)
 
 
 def main():
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-    messages = [
-        {
-            "role": "user",
-            "content": "What's Apple's current stock price, and how does it compare to its previous close?",
-        }
-    ]
+    messages = [{"role": "user", "content": "What's the weather like in Bengaluru right now?"}]
 
     response = client.chat.completions.create(
         model=MODEL,
@@ -98,8 +70,7 @@ def main():
         args = json.loads(tool_call.function.arguments)
         print(f"Model called tool: {tool_call.function.name}({args})")
 
-        result = get_stock_price(**args)
-        print(f"Tool result: {result}")
+        result = get_current_weather(**args)
 
         messages.append(
             {
