@@ -1,0 +1,24 @@
+[
+  {"ticket": "Our entire team is locked out of CloudSync Pro right now, we can't access any files for an important client deadline in an hour.", "urgency": "high", "split": "train"},
+  {"ticket": "I was charged three times this month for CloudSync Team and I need this fixed immediately, it's overdrafting my account.", "urgency": "high", "split": "train"},
+  {"ticket": "CloudSync just deleted 200GB of our project files after the last sync, this is a disaster.", "urgency": "high", "split": "train"},
+  {"ticket": "Security alert: I think someone else logged into my CloudSync account and downloaded my files.", "urgency": "high", "split": "train"},
+  {"ticket": "The whole company's CloudSync Team workspace has been down for two hours, nobody can work.", "urgency": "high", "split": "train"},
+  {"ticket": "My CloudSync Pro subscription was cancelled without warning and I lost access to critical files before a client meeting.", "urgency": "high", "split": "test"},
+  {"ticket": "Files are corrupting on every sync since this morning, we're losing data in real time.", "urgency": "high", "split": "test"},
+
+  {"ticket": "CloudSync Pro keeps failing to sync files over 2GB, it's slowing down my work but I can still use smaller files.", "urgency": "medium", "split": "train"},
+  {"ticket": "I can't log in after the update, the password reset email never arrives even after several tries.", "urgency": "medium", "split": "train"},
+  {"ticket": "Our CloudSync Team billing address is wrong on the last two invoices, can someone update it?", "urgency": "medium", "split": "train"},
+  {"ticket": "Uploads are much slower than last week, taking 10x longer than usual.", "urgency": "medium", "split": "train"},
+  {"ticket": "The mobile app crashes whenever I try to open a shared folder, desktop still works fine though.", "urgency": "medium", "split": "train"},
+  {"ticket": "I need to downgrade from CloudSync Pro to Basic but the option isn't showing up in settings.", "urgency": "medium", "split": "test"},
+  {"ticket": "Shared folder permissions aren't updating for one teammate, everyone else works fine.", "urgency": "medium", "split": "test"},
+
+  {"ticket": "Could you tell me whether CloudSync Basic supports two-factor authentication?", "urgency": "low", "split": "train"},
+  {"ticket": "Just wanted to say the new dashboard redesign looks great, no issues to report.", "urgency": "low", "split": "train"},
+  {"ticket": "Would it be possible to add a dark mode option to the desktop app in a future update?", "urgency": "low", "split": "train"},
+  {"ticket": "Asking whether the annual plan can be paid monthly instead of all at once.", "urgency": "low", "split": "train"},
+  {"ticket": "Requesting a feature to export reports as CSV instead of PDF, not urgent.", "urgency": "low", "split": "test"},
+  {"ticket": "Wondering if there's a referral program for CloudSync Pro customers.", "urgency": "low", "split": "test"}
+]

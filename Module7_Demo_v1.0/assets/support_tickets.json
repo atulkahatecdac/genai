@@ -1,0 +1,56 @@
+[
+  {
+    "ticket_id": "TCK-1001",
+    "customer_name": "Sarah Chen",
+    "product": "CloudSync Pro",
+    "issue_type": "billing",
+    "urgency": "high",
+    "status": "open",
+    "description": "Charged twice this month for the CloudSync Pro subscription."
+  },
+  {
+    "ticket_id": "TCK-1002",
+    "customer_name": "Miguel Alvarez",
+    "product": "CloudSync Pro",
+    "issue_type": "technical",
+    "urgency": "medium",
+    "status": "in_progress",
+    "description": "Sync fails intermittently when uploading files larger than 2GB."
+  },
+  {
+    "ticket_id": "TCK-1003",
+    "customer_name": "Priya Nair",
+    "product": "CloudSync Basic",
+    "issue_type": "billing",
+    "urgency": "low",
+    "status": "resolved",
+    "description": "Asked whether the annual plan can be paid monthly instead."
+  },
+  {
+    "ticket_id": "TCK-1004",
+    "customer_name": "Sarah Chen",
+    "product": "CloudSync Pro",
+    "issue_type": "technical",
+    "urgency": "high",
+    "status": "open",
+    "description": "Cannot log in after the last app update; password reset email never arrives."
+  },
+  {
+    "ticket_id": "TCK-1005",
+    "customer_name": "James O'Brien",
+    "product": "CloudSync Team",
+    "issue_type": "other",
+    "urgency": "low",
+    "status": "open",
+    "description": "Requesting a feature to export reports as CSV instead of PDF."
+  },
+  {
+    "ticket_id": "TCK-1006",
+    "customer_name": "Miguel Alvarez",
+    "product": "CloudSync Pro",
+    "issue_type": "billing",
+    "urgency": "medium",
+    "status": "resolved",
+    "description": "Refund requested for an accidental duplicate purchase."
+  }
+]
